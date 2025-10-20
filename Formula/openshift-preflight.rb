@@ -25,7 +25,7 @@ class OpenshiftPreflight < Formula
       sha256 "cd1b6143fb511433d07f29075b4840b712933d7d4d4fc6353b079b59c1cb06cd"
     end
   end
- 
+
   def install
     binary = self.class.url.split("/").last
     bin.install binary => "preflight"
