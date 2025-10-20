@@ -4,17 +4,6 @@ class OpenshiftPreflight < Formula
   version "1.14.1"
   license "Apache-2.0"
 
-  on_linux do
-    on_arm do
-      url "https://github.com/redhat-openshift-ecosystem/openshift-preflight/releases/download/#{version}/preflight-linux-arm64"
-      sha256 "cd29e198bd54cec46b219fc151b1b9c8fe71c33e7fdab7814862736a309a2a7c"
-    end
-    on_intel do
-      url "https://github.com/redhat-openshift-ecosystem/openshift-preflight/releases/download/#{version}/preflight-linux-amd64"
-      sha256 "cd1b6143fb511433d07f29075b4840b712933d7d4d4fc6353b079b59c1cb06cd"
-    end
-  end
-
   on_macos do
     on_arm do
       url "https://github.com/redhat-openshift-ecosystem/openshift-preflight/releases/download/#{version}/preflight-darwin-arm64"
@@ -26,6 +15,17 @@ class OpenshiftPreflight < Formula
     end
   end
 
+  on_linux do
+    on_arm do
+      url "https://github.com/redhat-openshift-ecosystem/openshift-preflight/releases/download/#{version}/preflight-linux-arm64"
+      sha256 "cd29e198bd54cec46b219fc151b1b9c8fe71c33e7fdab7814862736a309a2a7c"
+    end
+    on_intel do
+      url "https://github.com/redhat-openshift-ecosystem/openshift-preflight/releases/download/#{version}/preflight-linux-amd64"
+      sha256 "cd1b6143fb511433d07f29075b4840b712933d7d4d4fc6353b079b59c1cb06cd"
+    end
+  end
+ 
   def install
     binary = self.class.url.split("/").last
     bin.install binary => "preflight"
