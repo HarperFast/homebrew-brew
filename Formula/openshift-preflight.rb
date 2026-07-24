@@ -4,6 +4,8 @@ class OpenshiftPreflight < Formula
   version "1.14.1"
   license "Apache-2.0"
 
+  deprecate! date: "2026-07-24", because: "the harperfast/brew tap is no longer maintained"
+
   on_macos do
     on_arm do
       url "https://github.com/redhat-openshift-ecosystem/openshift-preflight/releases/download/#{version}/preflight-darwin-arm64"
